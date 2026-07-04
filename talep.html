@@ -463,65 +463,6 @@ Görüşleriniz hizmet kalitemizin artırılmasına katkı sağlamaktadır.
 
 <script>
 
-const form=document.getElementById("form");
-
-form.addEventListener("submit",async function(e){
-
-e.preventDefault();
-
-const formData=new FormData(form);
-
-try{
-
-const response=await fetch(form.action,{
-
-method:"POST",
-
-body:formData
-
-});
-
-const result=await response.json();
-
-if(result.success){
-
-document.getElementById("formCard").style.display="none";
-
-document.getElementById("successBox").style.display="block";
-
-window.scrollTo({
-
-top:0,
-
-behavior:"smooth"
-
-});
-
-form.reset();
-
-}
-
-else{
-
-alert("Mesaj gönderilemedi.\n\nLütfen tekrar deneyiniz.");
-
-}
-
-}
-
-catch(error){
-
-alert("Sunucuya bağlanılamadı.\n\nİnternet bağlantınızı kontrol ediniz.");
-
-}
-
-});
-
-</script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
 const form = document.getElementById("talepForm");
 
 form.addEventListener("submit", async function(e) {
@@ -546,4 +487,17 @@ form.addEventListener("submit", async function(e) {
         alert(result.message);
     }
 });
-</html>
+
+
+
+
+
+  
+
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+  </html>
