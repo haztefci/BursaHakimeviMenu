@@ -229,11 +229,8 @@ Mesajınız Başarıyla Gönderildi
 </div>
 
 <div class="cardForm" id="formCard">
+<form id="talepForm" enctype="multipart/form-data">
 
-<form
-id="form"
-action="https://api.web3forms.com/submit"
-method="POST">
 
 <input
 type="hidden"
@@ -376,14 +373,12 @@ Fotoğraf (İsteğe Bağlı)
 </label>
 
 <input
-
 type="file"
-
-class="form-control"
-
 name="attachment"
+class="form-control"
+accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
 
-accept="image/*">
+  
 
 </div>
 
@@ -527,5 +522,28 @@ alert("Sunucuya bağlanılamadı.\n\nİnternet bağlantınızı kontrol ediniz."
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+const form = document.getElementById("talepForm");
 
+form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    formData.append("access_key", "fa7ee0ba-d6b6-438c-a4f5-4eb87a1dcf13");
+    formData.append("subject", "Bursa Hakimevi Talep / Öneri");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+    });
+
+    const result = await response.json();
+
+    if(result.success){
+        alert("Talebiniz başarıyla gönderildi.");
+        form.reset();
+    }else{
+        alert(result.message);
+    }
+});
 </html>
