@@ -17,8 +17,8 @@
       "kategori": "cerez",
       "ad": "ANTEP FISTIĞI",
       "icerik": "ANTEP FISTIĞI 100GR",
-      "Alerjen": "",
-      "kalori": 560,
+      "Alerjen": "Sert kabuklu meyve içerir.",
+      "kalori": 590,
       "resim": "images/urunler/cerez/antepfistigi.jpg",
       "fiyat":145,
       "porsiyonlar": [
@@ -43,8 +43,8 @@
       "kategori": "cerez",
       "ad": "BADEM",
       "icerik": "BADEM 100GR",
-      "Alerjen": "",
-      "kalori": 575,
+      "Alerjen": "Sert meyve içerir.",
+      "kalori": 598,
       "resim": "images/urunler/cerez/badem.jpg",
       "fiyat":85,
       "porsiyonlar": [
@@ -135,8 +135,8 @@
       "kategori": "cerez",
       "ad": "FINDIK",
       "icerik": "FINDIK 100GR",
-      "Alerjen": "",
-      "kalori": 658,
+      "Alerjen": "Sert meyve içerir.",
+      "kalori": 628,
       "resim": "images/urunler/cerez/findik.jpg",
       "fiyat":105,
       "porsiyonlar": [
