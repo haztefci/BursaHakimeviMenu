@@ -68,7 +68,9 @@ function kategoriAdi(kategori){
 
         tatli:"🍰 Tatlılar",
 
-        icecek:"🥤 İçecekler"
+        icecek:"🥤 İçecekler",
+     
+        cerez:"🥜 Kuruyemişler"
 
     };
 
