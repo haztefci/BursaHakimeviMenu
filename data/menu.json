@@ -18,11 +18,11 @@
       "ad": "ANTEP FISTIĞI",
       "icerik": "ANTEP FISTIĞI 100GR",
       "Alerjen": "",
-      "kalori": 15,
+      "kalori": 560,
       "resim": "images/urunler/cerez/antepfistigi.jpg",
       "fiyat":145,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 15,"fiyat":145}
+         {"ad":"1 Paket","kalori": 560,"fiyat":145}
       ]
    },
    {
@@ -44,11 +44,11 @@
       "ad": "BADEM",
       "icerik": "BADEM 100GR",
       "Alerjen": "",
-      "kalori": 15,
+      "kalori": 575,
       "resim": "images/urunler/cerez/badem.jpg",
       "fiyat":85,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 15,"fiyat":85}
+         {"ad":"1 Paket","kalori": 575,"fiyat":85}
       ]
    },
    {
@@ -136,11 +136,11 @@
       "ad": "FINDIK",
       "icerik": "FINDIK 100GR",
       "Alerjen": "",
-      "kalori": 15,
+      "kalori": 658,
       "resim": "images/urunler/cerez/findik.jpg",
       "fiyat":105,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 15,"fiyat":105}
+         {"ad":"1 Paket","kalori": 658,"fiyat":105}
       ]
    },
    {
