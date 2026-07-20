@@ -101,16 +101,21 @@ font-size:15px;
 
 
 .feedbackArea{margin:60px auto}
-.feedbackTitle{text-align:center;color:#0B2341;font-size:34px;font-weight:bold;margin-bottom:30px}
-.feedbackWrap{overflow:hidden}
-.feedbackTrack{display:flex;gap:20px;width:max-content;animation:kaydir 35s linear infinite}
-.feedbackTrack:hover{animation-play-state:paused}
-@keyframes kaydir{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.feedbackCard{width:320px;background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-.feedbackCard h5{margin:8px 0 0;color:#0B2341}
+.feedbackTitle{text-align:center;color:#0B2341;font-size:34px;font-weight:bold;margin-bottom:10px}
+.feedbackSubtitle{text-align:center;color:#777;font-size:17px;margin-bottom:30px}
+.feedbackList{max-width:850px;margin:0 auto}
+.feedbackCard{background:#fff;border-radius:18px;padding:22px;margin-bottom:16px;box-shadow:0 8px 20px rgba(0,0,0,.12);border-left:5px solid #D4AF37}
+.feedbackHeader{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.feedbackUser{display:flex;align-items:center;gap:12px}
+.feedbackAvatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#0B2341;color:#fff;font-weight:bold;font-size:18px}
+.feedbackCard h5{margin:0;color:#0B2341;font-weight:bold}
 .feedbackCard small{color:#888}
-.feedbackCard p{margin-top:12px}
-.badgeType{background:#D4AF37;color:#000;border-radius:20px;padding:4px 10px;font-size:12px}
+.feedbackCard p{margin:15px 0 0;color:#444;line-height:1.65}
+.badgeType{background:#D4AF37;color:#000;border-radius:20px;padding:5px 11px;font-size:12px;font-weight:600}
+.feedbackHidden{display:none}
+.feedbackActions{text-align:center;margin-top:22px}
+.feedbackButton{border:none;border-radius:30px;padding:11px 24px;background:#0B2341;color:white;font-weight:600;transition:.2s}
+.feedbackButton:hover{background:#173c68}
 
 </style>
 
@@ -319,12 +324,110 @@ Formu Aç
   
 
 <div class="container feedbackArea">
+
 <h2 class="feedbackTitle">Müşteri Yorumları</h2>
-<div class="feedbackWrap"><div class="feedbackTrack"><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>A.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>M.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>S.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>E.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>H.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>A.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>M.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>S.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>E.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>H.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div></div></div>
+<p class="feedbackSubtitle">Misafirlerimizin en yeni değerlendirmeleri</p>
+
+<div class="feedbackList" id="feedbackList">
+
+<div class="feedbackCard">
+<div class="feedbackHeader">
+<div class="feedbackUser">
+<div class="feedbackAvatar">A</div>
+<div>
+<h5>A.</h5>
+<small>20 Temmuz 2026</small>
 </div>
+</div>
+<span class="badgeType">Teşekkür</span>
+</div>
+<p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Ailece memnun kaldık, teşekkür ederiz.</p>
+</div>
+
+<div class="feedbackCard">
+<div class="feedbackHeader">
+<div class="feedbackUser">
+<div class="feedbackAvatar">M</div>
+<div>
+<h5>M.</h5>
+<small>18 Temmuz 2026</small>
+</div>
+</div>
+<span class="badgeType">Öneri</span>
+</div>
+<p>Dijital menü oldukça kullanışlı olmuş. Günün yemeğinin ana sayfada ayrıca gösterilmesi güzel olabilir.</p>
+</div>
+
+<div class="feedbackCard feedbackHidden">
+<div class="feedbackHeader">
+<div class="feedbackUser">
+<div class="feedbackAvatar">S</div>
+<div>
+<h5>S.</h5>
+<small>15 Temmuz 2026</small>
+</div>
+</div>
+<span class="badgeType">İstek</span>
+</div>
+<p>Çocuklar için küçük porsiyon seçeneklerinin artırılmasını rica ediyoruz.</p>
+</div>
+
+<div class="feedbackCard feedbackHidden">
+<div class="feedbackHeader">
+<div class="feedbackUser">
+<div class="feedbackAvatar">E</div>
+<div>
+<h5>E.</h5>
+<small>12 Temmuz 2026</small>
+</div>
+</div>
+<span class="badgeType">Teşekkür</span>
+</div>
+<p>Konaklama bölümünde çalışan personelin güler yüzlü ve ilgili yaklaşımından çok memnun kaldık.</p>
+</div>
+
+<div class="feedbackCard feedbackHidden">
+<div class="feedbackHeader">
+<div class="feedbackUser">
+<div class="feedbackAvatar">H</div>
+<div>
+<h5>H.</h5>
+<small>10 Temmuz 2026</small>
+</div>
+</div>
+<span class="badgeType">Şikayet</span>
+</div>
+<p>Yoğun saatlerde siparişlerin hazırlanması biraz uzun sürdü. Bekleme süresinin azaltılması faydalı olabilir.</p>
+</div>
+
+<div class="feedbackActions">
+<button type="button" class="feedbackButton" id="feedbackToggleButton">
+<i class="bi bi-chevron-down me-2"></i>Tümünü Gör
+</button>
+</div>
+
+</div>
+
+</div>
+
 <script>
-document.querySelector('.feedbackTrack').addEventListener('click',function(){
-this.style.animationPlayState=this.style.animationPlayState==='paused'?'running':'paused';
+const feedbackButton = document.getElementById('feedbackToggleButton');
+const hiddenFeedbacks = document.querySelectorAll('.feedbackHidden');
+let feedbacksOpen = false;
+
+feedbackButton.addEventListener('click', function(){
+feedbacksOpen = !feedbacksOpen;
+
+hiddenFeedbacks.forEach(function(card){
+card.style.display = feedbacksOpen ? 'block' : 'none';
+});
+
+if(feedbacksOpen){
+feedbackButton.innerHTML = '<i class="bi bi-chevron-up me-2"></i>Yorumları Gizle';
+}else{
+feedbackButton.innerHTML = '<i class="bi bi-chevron-down me-2"></i>Tümünü Gör';
+document.querySelector('.feedbackArea').scrollIntoView({behavior:'smooth', block:'start'});
+}
 });
 </script>
 
