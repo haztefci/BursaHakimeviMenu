@@ -1,1594 +1,339 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Bursa Hakimevi dijital hizmet platformu. Restoran menüsü, konaklama, düğün salonu, iletişim ve müşteri görüşleri."
-    >
-
-    <title>Bursa Hakimevi | Dijital Hizmet Platformu</title>
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-        rel="stylesheet"
-    >
-
-    <style>
-        :root {
-            --lacivert: #0b2341;
-            --lacivert-acik: #163b67;
-            --bordo: #7a1f2b;
-            --bordo-koyu: #5d1420;
-            --altin: #d8ad55;
-            --krem: #f7f4ed;
-            --beyaz: #ffffff;
-            --metin: #263445;
-            --gri: #6b7280;
-            --yesil: #198754;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            background: var(--krem);
-            color: var(--metin);
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* ÜST MENÜ */
-
-        .navbar {
-            background: rgba(11, 35, 65, 0.97);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
-        }
-
-        .navbar-brand {
-            color: white;
-            font-weight: 800;
-            letter-spacing: 0.3px;
-        }
-
-        .navbar-brand:hover {
-            color: white;
-        }
-
-        .navbar-brand i {
-            color: var(--altin);
-        }
-
-        .navbar-toggler {
-            border-color: rgba(255, 255, 255, 0.4);
-        }
-
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-
-        .navbar-nav .nav-link {
-            color: rgba(255, 255, 255, 0.88);
-            font-weight: 600;
-            margin-left: 8px;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--altin);
-        }
-
-        /* KARŞILAMA ALANI */
-
-        .hero {
-            position: relative;
-            overflow: hidden;
-            min-height: 520px;
-            display: flex;
-            align-items: center;
-            color: white;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(11, 35, 65, 0.97),
-                    rgba(122, 31, 43, 0.89)
-                ),
-                url("images/hakimevi.jpg") center / cover no-repeat;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            border-radius: 50%;
-            background: rgba(216, 173, 85, 0.12);
-            top: -120px;
-            right: -80px;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.06);
-            bottom: -100px;
-            left: -80px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding-top: 55px;
-            padding-bottom: 55px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.11);
-            backdrop-filter: blur(8px);
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .hero h1 {
-            margin-top: 20px;
-            max-width: 780px;
-            font-size: clamp(36px, 6vw, 64px);
-            line-height: 1.08;
-            font-weight: 850;
-        }
-
-        .hero h1 span {
-            color: var(--altin);
-        }
-
-        .hero-description {
-            max-width: 700px;
-            margin-top: 20px;
-            font-size: 18px;
-            line-height: 1.75;
-            color: rgba(255, 255, 255, 0.88);
-        }
-
-        .hero-actions {
-            margin-top: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .btn-gold {
-            padding: 13px 23px;
-            border: none;
-            border-radius: 12px;
-            background: var(--altin);
-            color: #31230b;
-            font-weight: 750;
-            transition: 0.25s;
-        }
-
-        .btn-gold:hover {
-            background: #e6bd69;
-            color: #31230b;
-            transform: translateY(-2px);
-        }
-
-        .btn-hero-outline {
-            padding: 13px 23px;
-            border: 1px solid rgba(255, 255, 255, 0.55);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
-            font-weight: 700;
-            transition: 0.25s;
-        }
-
-        .btn-hero-outline:hover {
-            background: white;
-            color: var(--lacivert);
-            transform: translateY(-2px);
-        }
-
-        /* GENEL BÖLÜMLER */
-
-        .section-space {
-            padding: 75px 0;
-        }
-
-        .section-header {
-            max-width: 720px;
-            margin: 0 auto 38px;
-            text-align: center;
-        }
-
-        .section-kicker {
-            color: var(--bordo);
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            margin-top: 8px;
-            margin-bottom: 12px;
-            color: var(--lacivert);
-            font-size: clamp(28px, 4vw, 40px);
-            font-weight: 850;
-        }
-
-        .section-description {
-            margin: 0;
-            color: var(--gri);
-            font-size: 16px;
-            line-height: 1.7;
-        }
-
-        /* HİZMET KARTLARI */
-
-        .service-card {
-            position: relative;
-            height: 100%;
-            overflow: hidden;
-            border: 1px solid rgba(11, 35, 65, 0.08);
-            border-radius: 20px;
-            background: white;
-            box-shadow: 0 12px 32px rgba(11, 35, 65, 0.08);
-            transition: 0.28s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 20px 40px rgba(11, 35, 65, 0.15);
-        }
-
-        .service-card::after {
-            content: "";
-            position: absolute;
-            width: 105px;
-            height: 105px;
-            right: -35px;
-            bottom: -35px;
-            border-radius: 50%;
-            background: rgba(216, 173, 85, 0.12);
-        }
-
-        .service-card-body {
-            position: relative;
-            z-index: 2;
-            padding: 28px;
-        }
-
-        .service-icon {
-            width: 65px;
-            height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 17px;
-            background: linear-gradient(
-                135deg,
-                var(--lacivert),
-                var(--lacivert-acik)
-            );
-            color: white;
-            font-size: 29px;
-            box-shadow: 0 9px 20px rgba(11, 35, 65, 0.23);
-        }
-
-        .service-card.bordo .service-icon {
-            background: linear-gradient(
-                135deg,
-                var(--bordo),
-                #a83c4b
-            );
-        }
-
-        .service-card.altin .service-icon {
-            background: linear-gradient(
-                135deg,
-                #b58025,
-                var(--altin)
-            );
-        }
-
-        .service-card.yesil .service-icon {
-            background: linear-gradient(
-                135deg,
-                #11603d,
-                #239763
-            );
-        }
-
-        .service-card h3 {
-            margin-top: 22px;
-            margin-bottom: 10px;
-            color: var(--lacivert);
-            font-size: 21px;
-            font-weight: 800;
-        }
-
-        .service-card p {
-            min-height: 72px;
-            margin-bottom: 22px;
-            color: var(--gri);
-            line-height: 1.65;
-        }
-
-        .service-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 7px;
-            color: var(--bordo);
-            font-weight: 750;
-        }
-
-        .service-link i {
-            transition: transform 0.2s;
-        }
-
-        .service-link:hover i {
-            transform: translateX(5px);
-        }
-
-        /* KAYAN MÜŞTERİ GÖRÜŞLERİ */
-
-        .feedback-section {
-            overflow: hidden;
-            background: linear-gradient(
-                135deg,
-                var(--lacivert),
-                #102f55
-            );
-            color: white;
-        }
-
-        .feedback-section .section-kicker {
-            color: var(--altin);
-        }
-
-        .feedback-section .section-title {
-            color: white;
-        }
-
-        .feedback-section .section-description {
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .feedback-wrapper {
-            position: relative;
-            overflow: hidden;
-            padding: 5px 0 20px;
-        }
-
-        .feedback-wrapper::before,
-        .feedback-wrapper::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100px;
-            z-index: 5;
-            pointer-events: none;
-        }
-
-        .feedback-wrapper::before {
-            left: 0;
-            background: linear-gradient(
-                to right,
-                var(--lacivert),
-                transparent
-            );
-        }
-
-        .feedback-wrapper::after {
-            right: 0;
-            background: linear-gradient(
-                to left,
-                #102f55,
-                transparent
-            );
-        }
-
-        .feedback-track {
-            display: flex;
-            width: max-content;
-            gap: 20px;
-            animation: feedbackScroll 45s linear infinite;
-            will-change: transform;
-        }
-
-        .feedback-track.paused {
-            animation-play-state: paused;
-        }
-
-        .feedback-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes feedbackScroll {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(-50%);
-            }
-        }
-
-        .feedback-card {
-            width: 345px;
-            min-height: 235px;
-            flex-shrink: 0;
-            padding: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(9px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
-        }
-
-        .feedback-card-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
-
-        .feedback-avatar {
-            width: 47px;
-            height: 47px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: var(--altin);
-            color: #342307;
-            font-size: 19px;
-            font-weight: 850;
-        }
-
-        .feedback-user {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-        }
-
-        .feedback-name {
-            margin: 0;
-            color: white;
-            font-size: 16px;
-            font-weight: 750;
-        }
-
-        .feedback-date {
-            margin-top: 2px;
-            color: rgba(255, 255, 255, 0.56);
-            font-size: 12px;
-        }
-
-        .feedback-type {
-            padding: 6px 10px;
-            border-radius: 50px;
-            font-size: 11px;
-            font-weight: 800;
-            white-space: nowrap;
-        }
-
-        .type-istek {
-            background: rgba(13, 202, 240, 0.18);
-            color: #88e8ff;
-        }
-
-        .type-tesekkur {
-            background: rgba(25, 135, 84, 0.25);
-            color: #90e4b8;
-        }
-
-        .type-sikayet {
-            background: rgba(220, 53, 69, 0.22);
-            color: #ffadb6;
-        }
-
-        .type-oneri {
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffe083;
-        }
-
-        .feedback-text {
-            margin-top: 20px;
-            margin-bottom: 15px;
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        .feedback-stars {
-            color: #ffd166;
-            letter-spacing: 2px;
-            font-size: 14px;
-        }
-
-        .feedback-controls {
-            margin-top: 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .feedback-control-button {
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            padding: 9px 16px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-weight: 650;
-        }
-
-        .feedback-control-button:hover {
-            background: white;
-            color: var(--lacivert);
-        }
-
-        .privacy-note {
-            max-width: 760px;
-            margin: 20px auto 0;
-            color: rgba(255, 255, 255, 0.62);
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* TALEP ALANI */
-
-        .request-area {
-            padding: 75px 0;
-            background: white;
-        }
-
-        .request-box {
-            overflow: hidden;
-            border-radius: 25px;
-            background: linear-gradient(
-                135deg,
-                var(--bordo),
-                var(--bordo-koyu)
-            );
-            color: white;
-            box-shadow: 0 20px 45px rgba(93, 20, 32, 0.23);
-        }
-
-        .request-content {
-            padding: 46px;
-        }
-
-        .request-icon {
-            width: 76px;
-            height: 76px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.14);
-            color: var(--altin);
-            font-size: 34px;
-        }
-
-        .request-box h2 {
-            margin-top: 20px;
-            font-size: clamp(27px, 4vw, 39px);
-            font-weight: 850;
-        }
-
-        .request-box p {
-            max-width: 670px;
-            margin: 13px 0 25px;
-            color: rgba(255, 255, 255, 0.82);
-            line-height: 1.7;
-        }
-
-        .request-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .request-list li {
-            margin-bottom: 10px;
-        }
-
-        .request-list i {
-            margin-right: 8px;
-            color: var(--altin);
-        }
-
-        .btn-request {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 23px;
-            border-radius: 12px;
-            background: white;
-            color: var(--bordo);
-            font-weight: 800;
-            transition: 0.25s;
-        }
-
-        .btn-request:hover {
-            background: var(--altin);
-            color: #332207;
-            transform: translateY(-2px);
-        }
-
-        /* ALT BİLGİ */
-
-        footer {
-            padding: 45px 0 22px;
-            background: #07182d;
-            color: rgba(255, 255, 255, 0.75);
-        }
-
-        .footer-title {
-            color: white;
-            font-size: 20px;
-            font-weight: 800;
-        }
-
-        .footer-title i {
-            color: var(--altin);
-        }
-
-        .footer-link {
-            display: block;
-            margin-bottom: 9px;
-            color: rgba(255, 255, 255, 0.72);
-        }
-
-        .footer-link:hover {
-            color: var(--altin);
-        }
-
-        .footer-bottom {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.13);
-            text-align: center;
-            font-size: 13px;
-        }
-
-        /* YUKARI ÇIK BUTONU */
-
-        .back-to-top {
-            position: fixed;
-            right: 18px;
-            bottom: 18px;
-            z-index: 1000;
-            width: 46px;
-            height: 46px;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            border: none;
-            border-radius: 50%;
-            background: var(--bordo);
-            color: white;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.23);
-        }
-
-        .back-to-top.show {
-            display: flex;
-        }
-
-        /* MOBİL UYUM */
-
-        @media (max-width: 991px) {
-            .hero {
-                min-height: 470px;
-            }
-
-            .navbar-nav {
-                padding-top: 12px;
-            }
-
-            .navbar-nav .nav-link {
-                margin-left: 0;
-            }
-
-            .feedback-wrapper::before,
-            .feedback-wrapper::after {
-                width: 35px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                min-height: 500px;
-            }
-
-            .hero-content {
-                padding-top: 45px;
-                padding-bottom: 45px;
-            }
-
-            .hero-description {
-                font-size: 16px;
-            }
-
-            .hero-actions {
-                display: grid;
-            }
-
-            .hero-actions a {
-                width: 100%;
-                text-align: center;
-            }
-
-            .section-space {
-                padding: 58px 0;
-            }
-
-            .service-card-body {
-                padding: 23px;
-            }
-
-            .feedback-card {
-                width: 290px;
-                min-height: 255px;
-                padding: 20px;
-            }
-
-            .feedback-card-top {
-                align-items: flex-start;
-            }
-
-            .request-content {
-                padding: 30px 22px;
-            }
-
-            .btn-request {
-                width: 100%;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            .feedback-track {
-                animation: none;
-            }
-
-            .service-card,
-            .btn-gold,
-            .btn-hero-outline,
-            .btn-request {
-                transition: none;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bursa Hakimevi</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+body{
+
+background:#f4f2eb;
+font-family:'Segoe UI',sans-serif;
+
+}
+
+.hero{
+
+background:#0B2341;
+padding:60px 20px;
+text-align:center;
+color:white;
+
+}
+
+.logo{
+
+width:120px;
+margin-bottom:15px;
+
+}
+
+.hero h1{
+
+font-weight:bold;
+font-size:48px;
+
+}
+
+.hero h4{
+
+color:#D4AF37;
+
+}
+
+.cardMenu{
+
+border:none;
+border-radius:22px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.25s;
+text-decoration:none;
+color:#222;
+overflow:hidden;
+
+}
+
+.cardMenu:hover{
+
+transform:translateY(-6px);
+
+}
+
+.iconBox{
+
+font-size:55px;
+color:#D4AF37;
+
+}
+
+.card-body{
+
+padding:35px;
+
+}
+
+.baslik{
+
+font-size:30px;
+font-weight:bold;
+color:#0B2341;
+
+}
+
+.aciklama{
+
+font-size:18px;
+color:#666;
+
+}
+
+.footer{
+
+margin:40px 0;
+text-align:center;
+color:#777;
+font-size:15px;
+
+}
+
+
+.feedbackArea{margin:60px auto}
+.feedbackTitle{text-align:center;color:#0B2341;font-size:34px;font-weight:bold;margin-bottom:30px}
+.feedbackWrap{overflow:hidden}
+.feedbackTrack{display:flex;gap:20px;width:max-content;animation:kaydir 35s linear infinite}
+.feedbackTrack:hover{animation-play-state:paused}
+@keyframes kaydir{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.feedbackCard{width:320px;background:#fff;border-radius:18px;padding:20px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.feedbackCard h5{margin:8px 0 0;color:#0B2341}
+.feedbackCard small{color:#888}
+.feedbackCard p{margin-top:12px}
+.badgeType{background:#D4AF37;color:#000;border-radius:20px;padding:4px 10px;font-size:12px}
+
+</style>
+
 </head>
 
 <body>
 
-<!-- ÜST MENÜ -->
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-
-        <a class="navbar-brand" href="hindex.html">
-            <i class="bi bi-building me-2"></i>
-            Bursa Hakimevi
-        </a>
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#anaMenu"
-            aria-controls="anaMenu"
-            aria-expanded="false"
-            aria-label="Menüyü aç veya kapat"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div
-            class="collapse navbar-collapse"
-            id="anaMenu"
-        >
-            <ul class="navbar-nav ms-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#hizmetler">
-                        Hizmetler
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#musteri-gorusleri">
-                        Müşteri Görüşleri
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="iletisim.html">
-                        İletişim
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="talep.html">
-                        Talep ve Şikâyet
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-
-    </div>
-</nav>
-
-<!-- KARŞILAMA -->
-
-<header class="hero">
-    <div class="container hero-content">
-
-        <div class="hero-badge">
-            <i class="bi bi-stars"></i>
-            Dijital Hizmet Platformu
-        </div>
-
-        <h1>
-            Bursa Hakimevi’ne
-            <span>hoş geldiniz</span>
-        </h1>
-
-        <p class="hero-description">
-            Restoran menümüzü inceleyebilir, konaklama ve düğün salonu
-            hizmetlerimiz hakkında bilgi alabilir, görüş ve önerilerinizi
-            kolayca bize iletebilirsiniz.
-        </p>
-
-        <div class="hero-actions">
-
-            <a
-                href="hkategori.html"
-                class="btn-gold"
-            >
-                <i class="bi bi-menu-button-wide me-2"></i>
-                Dijital Menüyü Aç
-            </a>
-
-            <a
-                href="#hizmetler"
-                class="btn-hero-outline"
-            >
-                <i class="bi bi-grid me-2"></i>
-                Tüm Hizmetler
-            </a>
+<div class="hero">
 
-        </div>
+<img src="images/logo/hlogo.png" class="logo">
 
-    </div>
-</header>
+<h1>BURSA HAKİMEVİ</h1>
 
-<!-- HİZMETLER -->
 
-<section
-    id="hizmetler"
-    class="section-space"
->
-    <div class="container">
 
-        <div class="section-header">
+<p class="lead mt-4">
 
-            <div class="section-kicker">
-                Hizmetlerimiz
-            </div>
+Bursa E Tipi Kapalı ve Açık Ceza İnfaz Kurumu
+İşyurdu Müdürlüğü Hakimevi Sosyal Tesisleri
 
-            <h2 class="section-title">
-                İhtiyacınız olan hizmete kolayca ulaşın
-            </h2>
+</p>
 
-            <p class="section-description">
-                Bursa Hakimevi bünyesinde sunulan hizmetleri incelemek
-                için ilgili bölümü seçiniz.
-            </p>
+</div>
 
-        </div>
+<div class="container my-5">
 
-        <div class="row g-4">
+<div class="row g-4">
 
-            <!-- RESTORAN -->
+<div class="col-md-6">
 
-            <div class="col-md-6 col-xl-3">
-                <article class="service-card">
+<a href="hkategori.html" class="card cardMenu">
 
-                    <div class="service-card-body">
+<div class="card-body text-center">
 
-                        <div class="service-icon">
-                            <i class="bi bi-egg-fried"></i>
-                        </div>
+<div class="iconBox">
 
-                        <h3>Restoran Menüsü</h3>
+<i class="bi bi-cup-hot-fill"></i>
 
-                        <p>
-                            Yemek çeşitlerini, içeriklerini, kalori
-                            bilgilerini ve güncel fiyatlarını inceleyin.
-                        </p>
+</div>
 
-                        <a
-                            href="hkategori.html"
-                            class="service-link"
-                        >
-                            Menüyü görüntüle
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+<div class="baslik mt-3">
 
-                    </div>
+Dijital Restoran Menüsü
 
-                </article>
-            </div>
+</div>
 
-            <!-- KONAKLAMA -->
+<div class="aciklama mt-3">
 
-            <div class="col-md-6 col-xl-3">
-                <article class="service-card bordo">
+Izgara • Pide • Kahvaltı • Çorba • Tatlı • İçecekler
 
-                    <div class="service-card-body">
+</div>
 
-                        <div class="service-icon">
-                            <i class="bi bi-building-check"></i>
-                        </div>
+</div>
 
-                        <h3>Konaklama</h3>
+</a>
 
-                        <p>
-                            Oda seçenekleri, kamu personeli ve misafir
-                            konaklama fiyatları hakkında bilgi alın.
-                        </p>
+</div>
 
-                        <a
-                            href="otel.html"
-                            class="service-link"
-                        >
-                            Konaklamayı incele
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
 
-                    </div>
 
-                </article>
-            </div>
+  
+<div class="col-md-6">
 
-            <!-- DÜĞÜN SALONU -->
+<a href="otel.html" class="card cardMenu">
 
-            <div class="col-md-6 col-xl-3">
-                <article class="service-card altin">
+<div class="card-body text-center">
 
-                    <div class="service-card-body">
+<div class="iconBox">
 
-                        <div class="service-icon">
-                            <i class="bi bi-hearts"></i>
-                        </div>
+<i class="bi bi-building-fill"></i>
 
-                        <h3>Düğün Salonu</h3>
+</div>
 
-                        <p>
-                            Düğün paketi, hafta içi ve hafta sonu
-                            fiyatları ile ek hizmetleri görüntüleyin.
-                        </p>
+<div class="baslik mt-3">
 
-                        <a
-                            href="dugun.html"
-                            class="service-link"
-                        >
-                            Salon bilgilerini gör
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
+Konaklama Ücretleri
 
-                    </div>
+</div>
 
-                </article>
-            </div>
+<div class="aciklama mt-3">
 
-            <!-- İLETİŞİM -->
+Hakimevi oda fiyatları ve konaklama ücretleri
 
-            <div class="col-md-6 col-xl-3">
-                <article class="service-card yesil">
+</div>
 
-                    <div class="service-card-body">
+</div>
 
-                        <div class="service-icon">
-                            <i class="bi bi-geo-alt"></i>
-                        </div>
+</a>
 
-                        <h3>İletişim</h3>
+</div>
 
-                        <p>
-                            Adres, telefon, çalışma saatleri ve harita
-                            bilgilerine hızlıca ulaşın.
-                        </p>
 
-                        <a
-                            href="iletisim.html"
-                            class="service-link"
-                        >
-                            İletişim bilgileri
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
 
-                    </div>
+  
+<div class="col-md-6">
 
-                </article>
-            </div>
+<a href="dugun.html" class="card cardMenu">
 
-        </div>
+<div class="card-body text-center">
 
-    </div>
-</section>
+<div class="iconBox">
 
-<!-- KAYAN MÜŞTERİ GÖRÜŞLERİ -->
+<i class="bi bi-balloon-heart-fill"></i>
 
-<section
-    id="musteri-gorusleri"
-    class="feedback-section section-space"
->
-    <div class="container-fluid px-0">
+</div>
 
-        <div class="container">
 
-            <div class="section-header">
+  
+<div class="baslik mt-3">
 
-                <div class="section-kicker">
-                    Görüşleriniz Bizim İçin Değerli
-                </div>
+Düğün Salonu
 
-                <h2 class="section-title">
-                    Müşteri istek, öneri ve değerlendirmeleri
-                </h2>
+</div>
 
-                <p class="section-description">
-                    Misafirlerimiz tarafından iletilen ve yayınlanması
-                    uygun görülen görüşlerden bazıları.
-                </p>
+<div class="aciklama mt-3">
 
-            </div>
+Salon bilgileri, hizmetler ve fiyatlar
 
-        </div>
+</div>
 
-        <div class="feedback-wrapper">
+</div>
 
-            <div
-                id="feedbackTrack"
-                class="feedback-track"
-                aria-label="Müşteri görüşleri"
-            ></div>
+</a>
 
-        </div>
+</div>
 
-        <div class="container">
 
-            <div class="feedback-controls">
+  
+<div class="col-md-6">
 
-                <button
-                    id="feedbackToggleButton"
-                    type="button"
-                    class="feedback-control-button"
-                    onclick="toggleFeedbackAnimation()"
-                >
-                    <i
-                        id="feedbackToggleIcon"
-                        class="bi bi-pause-fill me-1"
-                    ></i>
+<a href="iletisim.html" class="card cardMenu">
 
-                    <span id="feedbackToggleText">
-                        Hareketi durdur
-                    </span>
-                </button>
+<div class="card-body text-center">
 
-                <a
-                    href="talep.html"
-                    class="feedback-control-button"
-                >
-                    <i class="bi bi-chat-square-text me-1"></i>
-                    Görüş bildir
-                </a>
+<div class="iconBox">
 
-            </div>
+<i class="bi bi-geo-alt-fill"></i>
 
-            <p class="privacy-note">
-                Kişisel verilerin korunması amacıyla görüş sahiplerinin
-                adları gizlenerek gösterilmektedir. Hakaret, kişisel bilgi
-                veya uygun olmayan içerikler yayınlanmaz.
-            </p>
+</div>
 
-        </div>
+<div class="baslik mt-3">
 
-    </div>
-</section>
+İletişim
 
-<!-- TALEP VE ŞİKÂYET -->
+</div>
 
-<section class="request-area">
-    <div class="container">
+<div class="aciklama mt-3">
 
-        <div class="request-box">
+Telefon, adres, konum ve çalışma saatleri
 
-            <div class="request-content">
+</div>
 
-                <div class="row align-items-center g-4">
+</div>
 
-                    <div class="col-lg-8">
+</a>
 
-                        <div class="request-icon">
-                            <i class="bi bi-chat-square-heart"></i>
-                        </div>
+</div>
 
-                        <h2>
-                            Talep, istek veya şikâyetiniz mi var?
-                        </h2>
 
-                        <p>
-                            Hizmetlerimizin geliştirilmesine katkı sağlamak
-                            için görüşlerinizi bize iletebilirsiniz.
-                            Gönderimleriniz ilgili birim tarafından
-                            değerlendirilecektir.
-                        </p>
 
-                        <ul class="request-list">
+  
+<div class="col-md-6">
 
-                            <li>
-                                <i class="bi bi-check-circle-fill"></i>
-                                Restoran hizmetleri
-                            </li>
+<a href="talep.html" class="card cardMenu">
 
-                            <li>
-                                <i class="bi bi-check-circle-fill"></i>
-                                Konaklama hizmetleri
-                            </li>
+<div class="card-body text-center">
 
-                            <li>
-                                <i class="bi bi-check-circle-fill"></i>
-                                Düğün salonu ve organizasyonlar
-                            </li>
+<div class="iconBox">
+<i class="bi bi-chat-dots-fill"></i>
+</div>
+<div class="baslik mt-3">
 
-                            <li>
-                                <i class="bi bi-check-circle-fill"></i>
-                                Genel talep, öneri ve şikâyetler
-                            </li>
+Talep • İstek • Şikayet
 
-                        </ul>
+</div>
 
-                    </div>
+<div class="aciklama mt-3">
 
-                    <div class="col-lg-4 text-lg-end">
+Görüş, öneri ve şikayetlerinizi bize ileterek hizmet kalitemizin gelişmesine katkıda bulunabilirsiniz.
 
-                        <a
-                            href="talep.html"
-                            class="btn-request"
-                        >
-                            <i class="bi bi-send-fill"></i>
-                            Görüşümü Bildir
-                        </a>
+</div>
 
-                    </div>
+<div class="aciklama mt-3">
 
-                </div>
+<span class="btn btn-primary rounded-pill px-4">
 
-            </div>
+Formu Aç
 
-        </div>
+</span>
 
-    </div>
-</section>
+</div>
 
-<!-- ALT BİLGİ -->
+</div>
 
-<footer>
-    <div class="container">
+</a>
 
-        <div class="row g-4">
+</div>
 
-            <div class="col-md-5">
+  </div>
+  </div>
 
-                <div class="footer-title">
-                    <i class="bi bi-building me-2"></i>
-                    Bursa Hakimevi
-                </div>
 
-                <p class="mt-3 mb-0">
-                    Bursa E Tipi Kapalı ve Açık Ceza İnfaz Kurumu
-                    İşyurdu Müdürlüğü Hakimevi Sosyal Tesisleri.
-                </p>
 
-            </div>
 
-            <div class="col-6 col-md-3">
 
-                <h6 class="text-white fw-bold mb-3">
-                    Hızlı Bağlantılar
-                </h6>
+  
 
-                <a class="footer-link" href="hkategori.html">
-                    Restoran Menüsü
-                </a>
-
-                <a class="footer-link" href="otel.html">
-                    Konaklama
-                </a>
-
-                <a class="footer-link" href="dugun.html">
-                    Düğün Salonu
-                </a>
-
-            </div>
-
-            <div class="col-6 col-md-4">
-
-                <h6 class="text-white fw-bold mb-3">
-                    İletişim ve Görüş
-                </h6>
-
-                <a class="footer-link" href="iletisim.html">
-                    İletişim Bilgileri
-                </a>
-
-                <a class="footer-link" href="talep.html">
-                    Talep ve Şikâyet
-                </a>
-
-                <a class="footer-link" href="#musteri-gorusleri">
-                    Müşteri Görüşleri
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="footer-bottom">
-            © <span id="currentYear"></span>
-            Bursa Hakimevi. Tüm hakları saklıdır.
-        </div>
-
-    </div>
-</footer>
-
-<!-- YUKARI ÇIK BUTONU -->
-
-<button
-    id="backToTop"
-    class="back-to-top"
-    type="button"
-    aria-label="Sayfanın başına dön"
->
-    <i class="bi bi-chevron-up"></i>
-</button>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<div class="container feedbackArea">
+<h2 class="feedbackTitle">Müşteri Yorumları</h2>
+<div class="feedbackWrap"><div class="feedbackTrack"><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>A.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>M.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>S.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>E.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>H.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>A.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>M.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>S.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>E.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div><div class="feedbackCard"><span class="badgeType">Teşekkür</span><h5>H.</h5><small>Temmuz 2026</small><p>Personelin ilgisi ve hizmet kalitesi çok güzeldi. Teşekkür ederiz.</p></div></div></div>
+</div>
 <script>
-    /*
-    YENİ MÜŞTERİ GÖRÜŞÜ EKLEME ÖRNEĞİ:
-
-    {
-        ad: "K.",
-        tarih: "20 Temmuz 2026",
-        tur: "İstek",
-        mesaj: "Mesaj buraya yazılacak.",
-        puan: 4
-    }
-
-    Kullanılabilecek türler:
-    İstek
-    Öneri
-    Şikâyet
-    Teşekkür
-    */
-
-    const musteriGorusleri = [
-        {
-            ad: "A.",
-            tarih: "18 Temmuz 2026",
-            tur: "Teşekkür",
-            mesaj: "Personelin ilgisi ve restoranın temizliği için teşekkür ederiz. Ailece memnun kaldık.",
-            puan: 5
-        },
-        {
-            ad: "M.",
-            tarih: "16 Temmuz 2026",
-            tur: "Öneri",
-            mesaj: "Dijital menü çok kullanışlı olmuş. Günün yemeği bölümünün de ana sayfada gösterilmesi güzel olabilir.",
-            puan: 5
-        },
-        {
-            ad: "S.",
-            tarih: "14 Temmuz 2026",
-            tur: "İstek",
-            mesaj: "Çocuklar için daha fazla yiyecek seçeneği ve küçük porsiyon eklenmesini rica ediyoruz.",
-            puan: 4
-        },
-        {
-            ad: "H.",
-            tarih: "11 Temmuz 2026",
-            tur: "Şikâyet",
-            mesaj: "Yoğun saatlerde siparişlerin hazırlanması biraz uzun sürdü. Personel ilgiliydi ancak bekleme süresi azaltılabilir.",
-            puan: 3
-        },
-        {
-            ad: "E.",
-            tarih: "8 Temmuz 2026",
-            tur: "Teşekkür",
-            mesaj: "Konaklama bölümünde çalışan personele güler yüzlü hizmetlerinden dolayı teşekkür ederiz.",
-            puan: 5
-        },
-        {
-            ad: "N.",
-            tarih: "5 Temmuz 2026",
-            tur: "Öneri",
-            mesaj: "Düğün salonu paketlerinin ve ek hizmetlerin internet sayfasında açıkça belirtilmesi çok faydalı olmuş.",
-            puan: 5
-        }
-    ];
-
-    const feedbackTrack =
-        document.getElementById("feedbackTrack");
-
-    const feedbackToggleIcon =
-        document.getElementById("feedbackToggleIcon");
-
-    const feedbackToggleText =
-        document.getElementById("feedbackToggleText");
-
-    let feedbackPaused = false;
-
-    function escapeHtml(value) {
-        return String(value ?? "")
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
-    }
-
-    function getTypeClass(type) {
-        const normalizedType =
-            String(type || "").toLocaleLowerCase("tr-TR");
-
-        if (normalizedType === "istek") {
-            return "type-istek";
-        }
-
-        if (
-            normalizedType === "şikâyet" ||
-            normalizedType === "şikayet"
-        ) {
-            return "type-sikayet";
-        }
-
-        if (
-            normalizedType === "teşekkür" ||
-            normalizedType === "tesekkur"
-        ) {
-            return "type-tesekkur";
-        }
-
-        return "type-oneri";
-    }
-
-    function createStars(score) {
-        const safeScore = Math.max(
-            0,
-            Math.min(5, Number(score) || 0)
-        );
-
-        let stars = "";
-
-        for (let i = 1; i <= 5; i++) {
-            if (i <= safeScore) {
-                stars += '<i class="bi bi-star-fill"></i>';
-            } else {
-                stars += '<i class="bi bi-star"></i>';
-            }
-        }
-
-        return stars;
-    }
-
-    function createFeedbackCard(item) {
-        const name = item.ad || "M.";
-
-        const firstLetter =
-            String(name)
-                .trim()
-                .charAt(0)
-                .toLocaleUpperCase("tr-TR");
-
-        return `
-            <article class="feedback-card">
-
-                <div class="feedback-card-top">
-
-                    <div class="feedback-user">
-
-                        <div class="feedback-avatar">
-                            ${escapeHtml(firstLetter)}
-                        </div>
-
-                        <div>
-                            <h3 class="feedback-name">
-                                ${escapeHtml(name)}
-                            </h3>
-
-                            <div class="feedback-date">
-                                ${escapeHtml(item.tarih)}
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <span
-                        class="feedback-type ${getTypeClass(item.tur)}"
-                    >
-                        ${escapeHtml(item.tur)}
-                    </span>
-
-                </div>
-
-                <p class="feedback-text">
-                    “${escapeHtml(item.mesaj)}”
-                </p>
-
-                <div
-                    class="feedback-stars"
-                    aria-label="${escapeHtml(item.puan)} üzerinden 5 puan"
-                >
-                    ${createStars(item.puan)}
-                </div>
-
-            </article>
-        `;
-    }
-
-    function renderFeedbacks() {
-        if (!musteriGorusleri.length) {
-            feedbackTrack.innerHTML = `
-                <div class="feedback-card">
-                    <p class="feedback-text">
-                        Henüz yayınlanmış müşteri görüşü bulunmamaktadır.
-                    </p>
-                </div>
-            `;
-
-            return;
-        }
-
-        const cards = musteriGorusleri
-            .map(createFeedbackCard)
-            .join("");
-
-        /*
-        Kesintisiz hareket için görüş kartları iki defa eklenir.
-        */
-
-        feedbackTrack.innerHTML = cards + cards;
-    }
-
-    function toggleFeedbackAnimation() {
-        feedbackPaused = !feedbackPaused;
-
-        feedbackTrack.classList.toggle(
-            "paused",
-            feedbackPaused
-        );
-
-        if (feedbackPaused) {
-            feedbackToggleIcon.className =
-                "bi bi-play-fill me-1";
-
-            feedbackToggleText.textContent =
-                "Hareketi devam ettir";
-        } else {
-            feedbackToggleIcon.className =
-                "bi bi-pause-fill me-1";
-
-            feedbackToggleText.textContent =
-                "Hareketi durdur";
-        }
-    }
-
-    /*
-    Mobil cihazda müşteri görüşlerine dokunulduğunda
-    kayan hareket durur veya yeniden devam eder.
-    */
-
-    feedbackTrack.addEventListener(
-        "click",
-        toggleFeedbackAnimation
-    );
-
-    /*
-    Güncel yıl.
-    */
-
-    document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-
-    /*
-    Yukarı çık butonu.
-    */
-
-    const backToTop =
-        document.getElementById("backToTop");
-
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 500) {
-            backToTop.classList.add("show");
-        } else {
-            backToTop.classList.remove("show");
-        }
-    });
-
-    backToTop.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    });
-
-    /*
-    Mobil üst menüden bağlantıya basılınca menüyü kapatır.
-    */
-
-    document
-        .querySelectorAll("#anaMenu .nav-link")
-        .forEach(function (link) {
-            link.addEventListener("click", function () {
-                const menuElement =
-                    document.getElementById("anaMenu");
-
-                const menuInstance =
-                    bootstrap.Collapse.getInstance(menuElement);
-
-                if (menuInstance) {
-                    menuInstance.hide();
-                }
-            });
-        });
-
-    renderFeedbacks();
+document.querySelector('.feedbackTrack').addEventListener('click',function(){
+this.style.animationPlayState=this.style.animationPlayState==='paused'?'running':'paused';
+});
 </script>
 
+<div class="footer">
+
+© 2026 Bursa Hakimevi Sosyal Tesisleri
+
+</div>
+
 </body>
+
 </html>
