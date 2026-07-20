@@ -1,512 +1,431 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Bursa Hakimevi | Talep • İstek • Şikayet</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-
-<style>
-
-body{
-
-background:#f5f5f0;
-
-font-family:'Segoe UI',sans-serif;
-
-}
-
-.header{
-
-background:#0B2341;
-
-color:white;
-
-padding:18px;
-
-border-radius:0 0 20px 20px;
-
-box-shadow:0 5px 15px rgba(0,0,0,.20);
-
-}
-
-.back{
-
-color:white;
-
-font-size:28px;
-
-text-decoration:none;
-
-}
-
-.hero{
-
-background:white;
-
-margin-top:25px;
-
-padding:35px;
-
-border-radius:25px;
-
-text-align:center;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-}
-
-.hero i{
-
-font-size:70px;
-
-color:#D4AF37;
-
-}
-
-.hero h2{
-
-margin-top:15px;
-
-font-weight:bold;
-
-color:#0B2341;
-
-}
-
-.hero p{
-
-color:#666;
-
-font-size:18px;
-
-}
-
-.cardForm{
-
-background:white;
-
-margin-top:25px;
-
-padding:30px;
-
-border-radius:25px;
-
-box-shadow:0 8px 20px rgba(0,0,0,.15);
-
-}
-
-.form-label{
-
-font-weight:bold;
-
-color:#0B2341;
-
-}
-
-.form-control,
-
-.form-select{
-
-padding:12px;
-
-border-radius:15px;
-
-}
-
-.form-control:focus,
-
-.form-select:focus{
-
-border-color:#D4AF37;
-
-box-shadow:0 0 10px rgba(212,175,55,.40);
-
-}
-
-.btnGonder{
-
-background:#0B2341;
-
-color:white;
-
-padding:15px;
-
-font-size:20px;
-
-font-weight:bold;
-
-border-radius:15px;
-
-transition:.3s;
-
-}
-
-.btnGonder:hover{
-
-background:#173B69;
-
-color:white;
-
-}
-
-.cardInfo{
-
-background:#FFF9EC;
-
-padding:20px;
-
-border-left:6px solid #D4AF37;
-
-border-radius:15px;
-
-margin-top:25px;
-
-}
-
-.footer{
-
-text-align:center;
-
-margin:40px 0;
-
-color:#777;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Bursa Hakimevi | Menü Yönetimi</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <style>
+        body {
+            background: #f4f6f9;
+            color: #1f2937;
+        }
+
+        .admin-header {
+            background: linear-gradient(135deg, #7a1f2b, #4f111b);
+            color: white;
+            padding: 30px 0;
+            margin-bottom: 25px;
+        }
+
+        .admin-header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .admin-header p {
+            margin: 6px 0 0;
+            opacity: 0.85;
+        }
+
+        .panel-card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .panel-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .category-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: white;
+        }
+
+        .category-item.active {
+            border-color: #7a1f2b;
+            background: #fff7f8;
+        }
+
+        .category-button {
+            border: none;
+            background: transparent;
+            text-align: left;
+            width: 100%;
+            font-weight: 600;
+            padding: 0;
+        }
+
+        .product-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 12px;
+            background: white;
+        }
+
+        .product-image {
+            width: 85px;
+            height: 85px;
+            border-radius: 12px;
+            object-fit: cover;
+            background: #e5e7eb;
+        }
+
+        .empty-box {
+            padding: 50px 20px;
+            text-align: center;
+            color: #6b7280;
+            border: 2px dashed #d1d5db;
+            border-radius: 14px;
+        }
+
+        .portion-row {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f9fafb;
+        }
+
+        .btn-main {
+            background: #7a1f2b;
+            color: white;
+            border: none;
+        }
+
+        .btn-main:hover {
+            background: #641823;
+            color: white;
+        }
+
+        .status-message {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            min-width: 280px;
+        }
+
+        @media (max-width: 768px) {
+            .admin-header h1 {
+                font-size: 23px;
+            }
+
+            .product-image {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="header">
+<header class="admin-header">
+    <div class="container">
+        <h1>
+            <i class="bi bi-gear-fill me-2"></i>
+            Menü Yönetim Paneli
+        </h1>
 
-<div class="d-flex align-items-center">
+        <p>Bursa Hakimevi dijital menü düzenleme alanı</p>
+    </div>
+</header>
 
-<a href="javascript:history.back()" class="back">
+<main class="container pb-5">
 
-<i class="bi bi-arrow-left-circle"></i>
+    <!-- Üst işlem düğmeleri -->
+    <div class="card panel-card mb-4">
+        <div class="card-body">
 
-</a>
+            <div class="d-flex flex-wrap gap-2">
 
-<h4 class="ms-3 mb-0">
+                <label class="btn btn-outline-primary mb-0">
+                    <i class="bi bi-folder2-open me-1"></i>
+                    menu.json Aç
 
-Talep • İstek • Şikayet
+                    <input
+                        type="file"
+                        id="jsonFileInput"
+                        accept=".json,application/json"
+                        hidden
+                    >
+                </label>
 
-</h4>
+                <button
+                    class="btn btn-main"
+                    type="button"
+                    onclick="downloadJson()"
+                >
+                    <i class="bi bi-download me-1"></i>
+                    menu.json İndir
+                </button>
 
+                <button
+                    class="btn btn-outline-danger"
+                    type="button"
+                    onclick="resetMenu()"
+                >
+                    <i class="bi bi-trash3 me-1"></i>
+                    Tümünü Temizle
+                </button>
+
+            </div>
+
+            <div class="form-text mt-3">
+                Önce mevcut <strong>menu.json</strong> dosyanı aç.
+                Değişikliklerini yaptıktan sonra yeni dosyayı indir.
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Kategoriler -->
+        <div class="col-lg-4">
+
+            <div class="card panel-card">
+
+                <div class="card-header bg-white py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <h2 class="panel-title">
+                            <i class="bi bi-grid-fill me-2"></i>
+                            Kategoriler
+                        </h2>
+
+                        <button
+                            class="btn btn-sm btn-main"
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#categoryModal"
+                        >
+                            <i class="bi bi-plus-lg"></i>
+                            Ekle
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div id="categoryList"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Ürünler -->
+        <div class="col-lg-8">
+
+            <div class="card panel-card">
+
+                <div class="card-header bg-white py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <h2 class="panel-title">
+                                <i class="bi bi-basket-fill me-2"></i>
+                                Ürünler
+                            </h2>
+
+                            <small
+                                id="selectedCategoryText"
+                                class="text-muted"
+                            >
+                                Önce kategori seçiniz
+                            </small>
+                        </div>
+
+                        <button
+                            id="addProductButton"
+                            class="btn btn-sm btn-main"
+                            type="button"
+                            onclick="openProductModal()"
+                            disabled
+                        >
+                            <i class="bi bi-plus-lg"></i>
+                            Ürün Ekle
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div id="productList"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<!-- Kategori modalı -->
+<div
+    class="modal fade"
+    id="categoryModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-grid me-2"></i>
+                    Yeni Kategori
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+                    <label class="form-label">Kategori adı</label>
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        class="form-control"
+                        placeholder="Örneğin: Salatalar"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Kategori ikonu</label>
+
+                    <input
+                        type="text"
+                        id="categoryIcon"
+                        class="form-control"
+                        value="bi-grid"
+                        placeholder="bi-grid"
+                    >
+
+                    <div class="form-text">
+                        Bootstrap ikon adı yazabilirsin:
+                        bi-cup-hot, bi-egg-fried, bi-cake2
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                >
+                    Vazgeç
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-main"
+                    onclick="addCategory()"
+                >
+                    Kategoriyi Kaydet
+                </button>
+
+            </div>
+
+        </div>
+    </div>
 </div>
 
-</div>
-
-<div class="container mb-5">
-
-<div class="hero">
-
-<i class="bi bi-chat-heart-fill"></i>
-
-<h2>
-
-Görüşleriniz Bizim İçin Değerlidir
-
-</h2>
-
-<p>
-
-Talep, öneri, teşekkür ve şikayetlerinizi aşağıdaki form aracılığıyla bize iletebilirsiniz.
-
-</p>
-
-</div>
-
-<div class="cardForm">
-
-<form id="talepForm"
-      action="https://formsubmit.co/ajax/haz.tefci@gmail.com"
-      method="POST">
-
-<input type="hidden" name="_subject" value="Bursa Hakimevi Talep Formu">
-
-<input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_template" value="table">
-
-<input type="hidden" name="_next"
-
-value="https://haztefci.github.io/BursaHakimeviMenu/talep.html">
-
-<div class="row">
-
-<div class="col-md-6 mb-3">
-
-<label class="form-label">
-
-Ad Soyad
-
-</label>
-
-<input
-
-type="text"
-
-name="Ad Soyad"
-
-class="form-control"
-
-required>
-
-</div>
-
-<div class="col-md-6 mb-3">
-
-<label class="form-label">
-
-Telefon
-
-</label>
-
-<input
-
-type="tel"
-
-name="Telefon"
-
-class="form-control">
-
-</div>
-
-<div class="col-md-6 mb-3">
-
-<label class="form-label">
-
-E-Posta
-
-</label>
-
-<input
-
-type="email"
-
-name="E-Posta"
-
-class="form-control"
-
-required>
-
-</div>
-
-<div class="col-md-6 mb-3">
-
-<label class="form-label">
-
-Konu
-
-</label>
-
-<select
-
-name="Konu"
-
-class="form-select"
-
-required>
-
-<option value="">Seçiniz</option>
-
-<option>Talep</option>
-
-<option>İstek</option>
-
-<option>Şikayet</option>
-
-<option>Öneri</option>
-
-<option>Teşekkür</option>
-
-</select>
-
-</div>
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Mesajınız
-
-</label>
-
-<textarea
-
-name="Mesaj"
-
-rows="7"
-
-class="form-control"
-
-required></textarea>
-
-</div>
-
-<div class="form-check mt-3">
-
-<input
-
-class="form-check-input"
-
-type="checkbox"
-
-required
-
-id="kvkk">
-
-<label
-
-class="form-check-label"
-
-for="kvkk">
-
-KVKK kapsamında bilgilerimin değerlendirme amacıyla işlenmesini kabul ediyorum.
-
-</label>
-
-</div>
-<div id="sonuc" class="mt-4"></div>
-<div class="cardInfo">
-
-<b>
-
-<i class="bi bi-shield-check"></i>
-
-Bilgilendirme
-
-</b>
-
-<br><br>
-
-İletmiş olduğunuz bilgiler yalnızca Bursa Hakimevi tarafından değerlendirme amacıyla kullanılacaktır.
-
-</div>
-
-  <div class="text-center mt-4">
-
-<button
-type="submit"
-class="btn btnGonder px-5">
-
-<i class="bi bi-send-fill"></i>
-
-Gönder
-
-</button>
-
-</div>
-
-</form>
-
-</div>
-
-<div class="footer">
-
-<hr>
-
-<p>
-
-<b>Bursa E Tipi Kapalı ve Açık Ceza İnfaz Kurumu</b><br>
-
-İşyurdu Müdürlüğü Hakimevi Sosyal Tesisleri
-
-</p>
-
-<p class="text-muted">
-
-Görüşleriniz hizmet kalitemizin artırılmasına katkı sağlamaktadır.
-
-</p>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-
-const form = document.getElementById("talepForm");
-const sonuc = document.getElementById("sonuc");
-
-form.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    sonuc.innerHTML = `
-    <div class="alert alert-warning text-center">
-        <div class="spinner-border spinner-border-sm"></div>
-        Mesajınız gönderiliyor...
-    </div>`;
-
-    fetch(form.action,{
-        method:"POST",
-        body:new FormData(form),
-        headers:{
-            'Accept':'application/json'
-        }
-    })
-
-    .then(response=>response.json())
-
-    .then(data=>{
-
-        if(data.success){
-
-            sonuc.innerHTML=`
-            <div class="alert alert-success text-center">
-
-            <h4>
-            <i class="bi bi-check-circle-fill"></i>
-
-            Mesajınız başarıyla gönderildi.
-            </h4>
-
-            Talep ve öneriniz tarafımıza ulaşmıştır.
-
-            </div>`;
-
-            form.reset();
-
-        }else{
-
-            sonuc.innerHTML=`
-            <div class="alert alert-danger text-center">
-
-            Gönderilemedi.<br>
-
-            ${data.message}
-
-            </div>`;
-
-        }
-
-    })
-
-    .catch(error=>{
-
-        sonuc.innerHTML=`
-        <div class="alert alert-danger text-center">
-
-        Sunucuya bağlanılamadı.
-
-        </div>`;
-
-    });
-
-});
-
-</script>
-</body>
-
-</html>
+<!-- Ürün modalı -->
+<div
+    class="modal fade"
+    id="productModal"
+    tabindex="-1"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5
+                    id="productModalTitle"
+                    class="modal-title"
+                >
+                    Yeni Ürün
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                ></button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <input
+                    type="hidden"
+                    id="editingProductId"
+                >
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Ürün adı</label>
+
+                        <input
+                            type="text"
+                            id="productName"
+                            class="form-control"
+                            placeholder="Örneğin: Mercimek Çorbası"
+                        >
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Fotoğraf yolu</label>
+
+                        <input
+                            type="text"
+                            id="productImage"
+                            class="form-control"
+                            placeholder="images/mercimek-corbasi.jpg"
+                        >
+
+                        <div class="form-text">
+                            Fotoğrafı ayrıca GitHub’daki images klas
