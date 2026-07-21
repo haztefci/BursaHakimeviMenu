@@ -44,6 +44,14 @@ color:#D4AF37;
 
 }
 
+  .feedbackCount{
+    text-align:center;
+    color:#D4AF37;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:5px;
+  }
+  
 .cardMenu{
 
 border:none;
@@ -434,6 +442,11 @@ Formu Aç
 <script>
 const feedbackButton = document.getElementById('feedbackToggleButton');
 const hiddenFeedbacks = document.querySelectorAll('.feedbackHidden');
+
+  const allFeedbacks = document.querySelectorAll('.feedbackCard');
+const feedbackCount = document.getElementById('feedbackCount');
+
+feedbackCount.textContent = allFeedbacks.length + ' yorum';
 let feedbacksOpen = false;
 
 feedbackButton.addEventListener('click', function(){
@@ -450,6 +463,10 @@ feedbackButton.innerHTML = '<i class="bi bi-chevron-down me-2"></i>Tümünü Gö
 document.querySelector('.feedbackArea').scrollIntoView({behavior:'smooth', block:'start'});
 }
 });
+
+
+
+  
 </script>
 
 <div class="footer">
