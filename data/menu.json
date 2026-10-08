@@ -8,7 +8,7 @@
       "icerik": "Karışık Cantık, Salata, Çay",
       "Alerjen": "",
       "kalori": 0,
-      "resim": "images/urunler/icecek/cantikkarisik.jpg",
+      "resim": "images/urunler/pide/cantikkarisik.jpg",
       "fiyat":140,
       "porsiyonlar": [
          {"ad":"1 Porsiyon","kalori": 0,"fiyat":140}
@@ -21,7 +21,7 @@
       "icerik": "Kuşbaşılı Cantık, Salata, Çay",
       "Alerjen": "",
       "kalori": 0,
-      "resim": "images/urunler/icecek/cantikkusbasi.jpg",
+      "resim": "images/urunler/pide/cantikkusbasi.jpg",
       "fiyat":130,
       "porsiyonlar": [
          {"ad":"1 Porsiyon","kalori": 0,"fiyat":130}
@@ -34,7 +34,7 @@
       "icerik": "Kıymalı Cantık, Salata, Çay",
       "Alerjen": "",
       "kalori": 0,
-      "resim": "images/urunler/icecek/cantikkiymali.jpg",
+      "resim": "images/urunler/pide/cantikkiymali.jpg",
       "fiyat":110,
       "porsiyonlar": [
          {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
@@ -48,7 +48,7 @@
       "icerik": "Kaşarlı Cantık, Salata, Çay",
       "Alerjen": "",
       "kalori": 0,
-      "resim": "images/urunler/icecek/cantikkasarli.jpg",
+      "resim": "images/urunler/pide/cantikkasarli.jpg",
       "fiyat":110,
       "porsiyonlar": [
          {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
