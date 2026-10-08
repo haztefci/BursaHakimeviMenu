@@ -2,7 +2,7 @@
   
    
    {
-      "id": 63,
+      "id": 66,
       "kategori": "pide",
       "ad": "Karışık Cantık",
       "icerik": "Karışık Cantık, Salata, Çay",
@@ -21,7 +21,7 @@
       "icerik": "Kuşbaşılı Cantık, Salata, Çay",
       "Alerjen": "",
       "kalori": 0,
-      "resim": "images/urunler/icecek/cantikkusbasili.jpg",
+      "resim": "images/urunler/icecek/cantikkusbasi.jpg",
       "fiyat":130,
       "porsiyonlar": [
          {"ad":"1 Porsiyon","kalori": 0,"fiyat":130}
