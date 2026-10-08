@@ -1,4 +1,60 @@
 ﻿[
+  
+   
+   {
+      "id": 63,
+      "kategori": "pide",
+      "ad": "Karışık Cantık",
+      "icerik": "Karışık Cantık, Salata, Çay",
+      "Alerjen": "",
+      "kalori": 0,
+      "resim": "images/urunler/icecek/cantikkarisik.jpg",
+      "fiyat":140,
+      "porsiyonlar": [
+         {"ad":"1 Porsiyon","kalori": 0,"fiyat":140}
+      ]
+   },
+   {
+      "id": 65,
+      "kategori": "pide",
+      "ad": "Kuşbaşılı Cantık",
+      "icerik": "Kuşbaşılı Cantık, Salata, Çay",
+      "Alerjen": "",
+      "kalori": 0,
+      "resim": "images/urunler/icecek/cantikkusbasili.jpg",
+      "fiyat":130,
+      "porsiyonlar": [
+         {"ad":"1 Porsiyon","kalori": 0,"fiyat":130}
+      ]
+   },
+   {
+      "id": 64,
+      "kategori": "pide",
+      "ad": "Kıymalı Cantık",
+      "icerik": "Kıymalı Cantık, Salata, Çay",
+      "Alerjen": "",
+      "kalori": 0,
+      "resim": "images/urunler/icecek/cantikkiymali.jpg",
+      "fiyat":110,
+      "porsiyonlar": [
+         {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
+      ]
+   }, 
+    
+    {
+      "id": 63,
+      "kategori": "pide",
+      "ad": "Kaşarlı Cantık",
+      "icerik": "Kaşarlı Cantık, Salata, Çay",
+      "Alerjen": "",
+      "kalori": 0,
+      "resim": "images/urunler/icecek/cantikkasarli.jpg",
+      "fiyat":110,
+      "porsiyonlar": [
+         {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
+      ]
+   },
+    
    {
       "id": 40,
       "kategori": "icecek",
