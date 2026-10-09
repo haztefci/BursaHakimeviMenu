@@ -6,8 +6,8 @@
       "kategori": "pide",
       "ad": "Karışık Cantık",
       "icerik": "Karışık Cantık, Salata, Çay",
-      "Alerjen": "",
-      "kalori": 0,
+      "Alerjen": "Süt ve süt ürünleri içerir. Gluten içerir",
+      "kalori": 917,
       "resim": "images/urunler/pide/cantikkarisik.jpg",
       "fiyat":140,
       "porsiyonlar": [
@@ -19,8 +19,8 @@
       "kategori": "pide",
       "ad": "Kuşbaşılı Cantık",
       "icerik": "Kuşbaşılı Cantık, Salata, Çay",
-      "Alerjen": "",
-      "kalori": 0,
+      "Alerjen": "Süt ve süt ürünleri içerir. Gluten içerir",
+      "kalori": 831,
       "resim": "images/urunler/pide/cantikkusbasi.jpg",
       "fiyat":130,
       "porsiyonlar": [
@@ -32,8 +32,8 @@
       "kategori": "pide",
       "ad": "Kıymalı Cantık",
       "icerik": "Kıymalı Cantık, Salata, Çay",
-      "Alerjen": "",
-      "kalori": 0,
+      "Alerjen": "Süt ve süt ürünleri içerir. Gluten içerir",
+      "kalori": 812,
       "resim": "images/urunler/pide/cantikkiymali.jpg",
       "fiyat":110,
       "porsiyonlar": [
@@ -46,8 +46,8 @@
       "kategori": "pide",
       "ad": "Kaşarlı Cantık",
       "icerik": "Kaşarlı Cantık, Salata, Çay",
-      "Alerjen": "",
-      "kalori": 0,
+      "Alerjen": "Süt ve süt ürünleri içerir. Gluten içerir",
+      "kalori": 937,
       "resim": "images/urunler/pide/cantikkasarli.jpg",
       "fiyat":110,
       "porsiyonlar": [
@@ -86,7 +86,7 @@
       "kategori": "icecek",
       "ad": "AYRAN  ",
       "icerik": "AYRAN  ",
-      "Alerjen": "",
+      "Alerjen": "Süt ve süt ürünleri içerir.",
       "kalori": 120,
       "resim": "images/urunler/icecek/ayran.jpg",
       "fiyat":35,
@@ -139,11 +139,11 @@
       "ad": "ÇOBAN KAVURMA",
       "icerik": "DANA ETİ, PATATES KIZARTMASI, PİRİNÇ, DOMATES, SİVRİ BİBER, ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1285,
+      "kalori": 1279,
       "resim": "images/urunler/izgara/cobankavurma.jpg",
       "fiyat":375,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1285,"fiyat":375}
+         {"ad":"1 Porsiyon","kalori": 1279,"fiyat":375}
       ]
    },
    {
@@ -152,11 +152,11 @@
       "ad": "ÇOBAN SALATA",
       "icerik": "DOMATES, KURU SOĞAN, SALATALIK, SİVRİ BİBER",
       "Alerjen": "",
-      "kalori": 257,
+      "kalori": 245,
       "resim": "images/urunler/salata/cobansalata.jpg",
       "fiyat":60,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 257,"fiyat":60}
+         {"ad":"1 Porsiyon","kalori": 245,"fiyat":60}
       ]
    },
    {
@@ -218,12 +218,12 @@
       "ad": "IZGARA KÖFTE",
       "icerik": "IZGARA KÖFTE, PATATES KIZARTMASI, DOMATES, SİVRİ BİBER,BULGUR PİLAVI, ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Gluten içerir.",
-      "kalori": 1445,
+      "kalori": 1405,
       "resim": "images/urunler/izgara/kofte.jpg",
       "fiyat":330,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1445,"fiyat":330},
-         {"ad":"Yarım Porsiyon","kalori": 979,"fiyat":200}
+         {"ad":"1 Porsiyon","kalori": 1405,"fiyat":330},
+         {"ad":"Yarım Porsiyon","kalori": 976,"fiyat":200}
       ]
    },
    {
@@ -232,11 +232,11 @@
       "ad": "KAHVALTI",
       "icerik": "SİGARA BÖREĞİ, DOMATES, SALATALIK, PEYNİR, KAŞAR PEYNİRİ, ZEYTİN, YUMURTA, TEREYAĞ, REÇEL, BAL, ÇAY, SU",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 2007,
+      "kalori": 1936,
       "resim": "images/urunler/kahvalti/kahvalti.jpg",
       "fiyat":275,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 2007,"fiyat":275}
+         {"ad":"1 Porsiyon","kalori": 1936,"fiyat":275}
       ]
    },
    {
@@ -245,12 +245,12 @@
       "ad": "KARIŞIK IZGARA",
       "icerik": "KUZU PİRZOLA, DANA ETİ, KUZU ETİ, PİLİÇ BONFİLE, SUCUK, PATATES KIZARTMASI,BULGUR PİLAVI,SİVRİ BİBER,DOMATES, ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1857,
+      "kalori": 1746,
       "resim": "images/urunler/izgara/karisikizgara.jpg",
       "fiyat":450,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1857,"fiyat":450},
-         {"ad":"1,5 Porsiyon","kalori": 2328,"fiyat":675}
+         {"ad":"1 Porsiyon","kalori": 1746,"fiyat":450},
+         {"ad":"1,5 Porsiyon","kalori": 2199,"fiyat":675}
       ]
    },
    {
@@ -259,12 +259,12 @@
       "ad": "KARIŞIK PİDE",
       "icerik": "KARIŞIK PİDE, SALATA, ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1177,
+      "kalori": 1116,
       "resim": "images/urunler/pide/karisikpide.jpg",
       "fiyat":220,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1177,"fiyat":220},
-         {"ad":"1,5 Porsiyon","kalori": 1575,"fiyat":330}
+         {"ad":"1 Porsiyon","kalori": 1116,"fiyat":220},
+         {"ad":"1,5 Porsiyon","kalori": 1509,"fiyat":330}
       ]
    },
    {
@@ -273,12 +273,12 @@
       "ad": "KAŞARLI  PİDE",
       "icerik": "KAŞARLI PİDE, SALATA, ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1097,
+      "kalori": 1071,
       "resim": "images/urunler/pide/kasarlipide.jpg",
       "fiyat":180,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1097,"fiyat":180},
-         {"ad":"1,5 Porsiyon","kalori": 1589,"fiyat":270}
+         {"ad":"1 Porsiyon","kalori": 1071,"fiyat":180},
+         {"ad":"1,5 Porsiyon","kalori": 1563,"fiyat":270}
       ]
    },
    {
@@ -287,11 +287,11 @@
       "ad": "KAŞARLI KİREMİT KÖFTE",
       "icerik": "KAŞARLI KÖFTE, ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1322,
+      "kalori": 1168,
       "resim": "images/urunler/izgara/kasarlikiremitkofte.jpg",
       "fiyat":325,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1322,"fiyat":325}
+         {"ad":"1 Porsiyon","kalori": 1168,"fiyat":325}
       ]
    },
    {
@@ -300,11 +300,11 @@
       "ad": "KAŞARLI OMLET",
       "icerik": "KAŞAR PEYNİR, YUMURTA, DOMATES, SALATALIK",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 698,
+      "kalori": 603,
       "resim": "images/urunler/arasicak/kasarliomlet.jpg",
       "fiyat":120,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 698,"fiyat":120}
+         {"ad":"1 Porsiyon","kalori": 603,"fiyat":120}
       ]
    },
    {
@@ -313,11 +313,11 @@
       "ad": "KAVURMALI YUMURTA",
       "icerik": "KAVURMA, YUMURTA",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 681,
+      "kalori": 645,
       "resim": "images/urunler/arasicak/kavurmaliyumurta.jpg",
       "fiyat":170,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 681,"fiyat":170}
+         {"ad":"1 Porsiyon","kalori": 645,"fiyat":170}
       ]
    },
    {
@@ -326,12 +326,12 @@
       "ad": "KIYMALI PİDE",
       "icerik": "KIYMALI PİDE, SALATA, ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 931,
+      "kalori": 866,
       "resim": "images/urunler/pide/kiymalipide.jpg",
       "fiyat":180,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 931,"fiyat":180},
-         {"ad":"1,5 Porsiyon","kalori": 1330,"fiyat":270}
+         {"ad":"1 Porsiyon","kalori": 866,"fiyat":180},
+         {"ad":"1,5 Porsiyon","kalori": 1265,"fiyat":270}
       ]
    },
    {
@@ -340,11 +340,11 @@
       "ad": "KİREMİT KUŞBAŞI KAŞARLI",
       "icerik": "KAŞARLI KUŞBAŞILI ,ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1337,
+      "kalori": 1262,
       "resim": "images/urunler/izgara/kiremitkusbasikasarli.jpg",
       "fiyat":325,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1337,"fiyat":325}
+         {"ad":"1 Porsiyon","kalori": 1262,"fiyat":325}
       ]
    },
    {
@@ -366,12 +366,12 @@
       "ad": "KUŞBAŞILI PİDE",
       "icerik": "KUŞBAŞILI PİDE, SALATA, ÇAY",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 960,
+      "kalori": 895,
       "resim": "images/urunler/pide/kusbasilipide.jpg",
       "fiyat":220,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 960,"fiyat":220},
-         {"ad":"1,5 Porsiyon","kalori": 1388,"fiyat":330}
+         {"ad":"1 Porsiyon","kalori": 895,"fiyat":220},
+         {"ad":"1,5 Porsiyon","kalori": 1322,"fiyat":330}
       ]
    },
    {
@@ -380,11 +380,11 @@
       "ad": "KUZU PİRZOLA",
       "icerik": "KUZU PİRZOLA, BULGUR PİLAVI, PATATES KIZARTMASI, DOMATES, SİVRİ BİBER, ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Gluten içerir.",
-      "kalori": 1209,
+      "kalori": 1178,
       "resim": "images/urunler/izgara/kuzupirzola.jpg",
       "fiyat":750,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1209,"fiyat":750}
+         {"ad":"1 Porsiyon","kalori": 1178,"fiyat":750}
       ]
    },
    {
@@ -393,12 +393,12 @@
       "ad": "KUZU ŞİŞ",
       "icerik": "KUZU ETİ, PATATES KIZARTMASI, DOMATES, SİVRİ BİBER, BULGUR PİLAVI,ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1638,
+      "kalori": 1555,
       "resim": "images/urunler/izgara/kuzusis.jpg",
       "fiyat":440,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1638,"fiyat":440},
-         {"ad":"1,5 Porsiyon","kalori": 2000,"fiyat":660}
+         {"ad":"1 Porsiyon","kalori": 1555,"fiyat":440},
+         {"ad":"1,5 Porsiyon","kalori": 1863,"fiyat":660}
       ]
    },
    {
@@ -407,11 +407,11 @@
       "ad": "LAHMACUN",
       "icerik": "LAHMACUN, SALATA, ÇAY",
       "Alerjen": "Gluten içerir.",
-      "kalori": 587,
+      "kalori": 583,
       "resim": "images/urunler/pide/lahmacun.jpg",
       "fiyat":90,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 587,"fiyat":90}
+         {"ad":"1 Porsiyon","kalori": 583,"fiyat":90}
       ]
    },
    {
@@ -433,12 +433,12 @@
       "ad": "MERCİMEK ÇORBASI",
       "icerik": "MERCİMEK ÇORBASI, LİMON",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 930,
+      "kalori": 926,
       "resim": "images/urunler/corba/mercimekcorbasi.jpg",
       "fiyat":70,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 930,"fiyat":70},
-         {"ad":"Yarım Porsiyon","kalori": 569,"fiyat":40}
+         {"ad":"1 Porsiyon","kalori": 926,"fiyat":70},
+         {"ad":"Yarım Porsiyon","kalori": 567,"fiyat":40}
       ]
    },
    {
@@ -499,12 +499,12 @@
       "ad": "PİLİÇ IZGARA",
       "icerik": "PİLİÇ BONFİLE, PATATES KIZARTMASI, DOMATES, SİVRİ BİBER, BULGUR PİLAVI,ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Gluten içerir.",
-      "kalori": 1292,
+      "kalori": 1253,
       "resim": "images/urunler/izgara/pilicizgara.jpg",
       "fiyat":230,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1292,"fiyat":230},
-         {"ad":"1,5 Porsiyon","kalori": 1647,"fiyat":345}
+         {"ad":"1 Porsiyon","kalori": 1253,"fiyat":230},
+         {"ad":"1,5 Porsiyon","kalori": 1608,"fiyat":345}
       ]
    },
    {
@@ -513,11 +513,11 @@
       "ad": "SAÇ KAVURMA",
       "icerik": "KUZU ETİ, PATATES KIZARTMASI, ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 1697,
+      "kalori": 1677,
       "resim": "images/urunler/izgara/sackavurma.jpg",
       "fiyat":440,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1697,"fiyat":440}
+         {"ad":"1 Porsiyon","kalori": 1677,"fiyat":440}
       ]
    },
    {
@@ -565,11 +565,11 @@
       "ad": "SUCUKLU YUMURTA",
       "icerik": "DANA SUCUK, YUMURTA, DOMATES, SALATALIK",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 788,
+      "kalori": 764,
       "resim": "images/urunler/arasicak/sucukluyumurta.jpg",
       "fiyat":150,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 788,"fiyat":150}
+         {"ad":"1 Porsiyon","kalori": 764,"fiyat":150}
       ]
    },
    {
@@ -578,11 +578,11 @@
       "ad": "SÜT HELVASI",
       "icerik": "SÜT HELVASI",
       "Alerjen": "Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 731,
+      "kalori": 733,
       "resim": "images/urunler/tatli/suthelvasi.jpg",
       "fiyat":75,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 731,"fiyat":75}
+         {"ad":"1 Porsiyon","kalori": 733,"fiyat":75}
       ]
    },
    {
@@ -643,11 +643,11 @@
       "ad": "TATLI-SÜTLAÇ",
       "icerik": "TATLI-SÜTLAÇ",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Süt ve süt ürünleri içerir.Gluten içerir.",
-      "kalori": 564,
+      "kalori": 568,
       "resim": "images/urunler/tatli/sutlac.jpg",
       "fiyat":110,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 564,"fiyat":110}
+         {"ad":"1 Porsiyon","kalori": 568,"fiyat":110}
       ]
    },
    {
@@ -656,12 +656,12 @@
       "ad": "TAVUK ŞİŞ",
       "icerik": "PİLİÇ BONFİLE, PATATES KIZARTMASI, DOMATES, SİVRİ BİBER, BULGUR PİLAVI,ÇAY",
       "Alerjen": "Yumurta ve yumurta ürünleri içerir.Gluten içerir.",
-      "kalori": 1348,
+      "kalori": 1265,
       "resim": "images/urunler/izgara/tavuksis.jpg",
       "fiyat":230,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 1348,"fiyat":230},
-         {"ad":"1,5 Porsiyon","kalori": 1524,"fiyat":345}
+         {"ad":"1 Porsiyon","kalori": 1265,"fiyat":230},
+         {"ad":"1,5 Porsiyon","kalori": 1413,"fiyat":345}
       ]
    },
    {
