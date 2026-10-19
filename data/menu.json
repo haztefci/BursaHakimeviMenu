@@ -11,7 +11,7 @@
       "resim": "images/urunler/pide/cantikkarisik.jpg",
       "fiyat":140,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 0,"fiyat":140}
+         {"ad":"1 Porsiyon","kalori": 917,"fiyat":140}
       ]
    },
    {
@@ -24,7 +24,7 @@
       "resim": "images/urunler/pide/cantikkusbasi.jpg",
       "fiyat":130,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 0,"fiyat":130}
+         {"ad":"1 Porsiyon","kalori": 831,"fiyat":130}
       ]
    },
    {
@@ -37,7 +37,7 @@
       "resim": "images/urunler/pide/cantikkiymali.jpg",
       "fiyat":110,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
+         {"ad":"1 Porsiyon","kalori": 812,"fiyat":110}
       ]
    }, 
     
@@ -51,7 +51,7 @@
       "resim": "images/urunler/pide/cantikkasarli.jpg",
       "fiyat":110,
       "porsiyonlar": [
-         {"ad":"1 Porsiyon","kalori": 0,"fiyat":110}
+         {"ad":"1 Porsiyon","kalori": 937,"fiyat":110}
       ]
    },
     
@@ -78,7 +78,7 @@
       "resim": "images/urunler/cerez/antepfistigi.jpg",
       "fiyat":160,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 560,"fiyat":160}
+         {"ad":"1 Paket","kalori": 590,"fiyat":160}
       ]
    },
    {
@@ -104,7 +104,7 @@
       "resim": "images/urunler/cerez/badem.jpg",
       "fiyat":90,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 575,"fiyat":90}
+         {"ad":"1 Paket","kalori": 598,"fiyat":90}
       ]
    },
    {
@@ -196,7 +196,7 @@
       "resim": "images/urunler/cerez/findik.jpg",
       "fiyat":115,
       "porsiyonlar": [
-         {"ad":"1 Paket","kalori": 658,"fiyat":115}
+         {"ad":"1 Paket","kalori": 628,"fiyat":115}
       ]
    },
    {
